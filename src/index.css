@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 767px) {
+  .react-flow__controls {
+    transform: scale(.88);
+    transform-origin: bottom left;
+  }
+
+  .react-flow__attribution {
+    display: none;
+  }
+}

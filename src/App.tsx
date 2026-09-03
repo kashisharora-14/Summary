@@ -15,7 +15,7 @@ function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTimelineEvent, setActiveTimelineEvent] = useState<string | null>(null);
-  const [sourcesExpanded, setSourcesExpanded] = useState(true);
+  const [sourcesExpanded, setSourcesExpanded] = useState(() => window.innerWidth >= 768);
   const focusNodeRef = useRef<string | null>(null);
 
   useEffect(() => {

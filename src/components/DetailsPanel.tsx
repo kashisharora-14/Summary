@@ -411,7 +411,7 @@ function ClueDetails({ entity }: { entity: Extract<CaseEntity, { type: 'clue' }>
 
 export function DetailsPanel({ entity, caseData }: DetailsPanelProps) {
   return (
-    <aside className="flex max-h-[34vh] w-full flex-shrink-0 flex-col overflow-y-auto border-t border-gray-200 bg-white md:max-h-none md:w-80 md:border-l md:border-t-0">
+    <aside className="flex max-h-[38vh] w-full flex-shrink-0 flex-col overflow-y-auto border-t border-gray-200 bg-white md:max-h-none md:w-80 md:border-l md:border-t-0">
       <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-100 bg-white px-4 py-3 sm:px-5">
         <h3 className="text-sm font-bold uppercase tracking-wide text-gray-700">Dossier</h3>
         {entity && (
