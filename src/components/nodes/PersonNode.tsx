@@ -13,23 +13,26 @@ interface PersonNodeData {
 
 function PersonNodeBase({ data }: { data: PersonNodeData }) {
   const { entity, isSelected, isHighlighted, isFaded, isSearchMatch, onClick } = data;
+  const role = entity.role.toLowerCase();
+  const isSuspect = role.includes('suspect') || role.includes('accomplice');
+  const isWitness = role.includes('witness');
 
-  const riskColors: Record<string, string> = {
-    high: 'bg-red-500 text-white',
-    medium: 'bg-amber-500 text-white',
-    low: 'bg-blue-500 text-white',
-  };
+  const roleCardColors = isSuspect
+    ? 'border-red-200 bg-red-50 hover:shadow-md hover:scale-[1.03]'
+    : isWitness
+    ? 'border-blue-200 bg-blue-50 hover:shadow-md hover:scale-[1.03]'
+    : 'border-gray-200 bg-white hover:shadow-md hover:scale-[1.03]';
 
   return (
     <div
       onClick={() => onClick(entity.id)}
       className={[
-        'relative flex flex-col items-center gap-2 rounded-2xl border bg-white px-4 py-3 shadow-sm transition-all duration-200 cursor-pointer',
+        'relative flex flex-col items-center gap-2 rounded-2xl border px-4 py-3 shadow-sm transition-all duration-200 cursor-pointer',
         isSelected
-          ? 'border-blue-500 ring-2 ring-blue-300 shadow-lg scale-105'
+          ? 'border-blue-500 bg-white ring-2 ring-blue-300 shadow-lg scale-105'
           : isHighlighted
-          ? 'border-blue-400 shadow-md scale-[1.03]'
-          : 'border-gray-200 hover:shadow-md hover:scale-[1.03]',
+          ? 'border-blue-400 bg-white shadow-md scale-[1.03]'
+          : roleCardColors,
         isFaded ? 'opacity-30' : 'opacity-100',
         isSearchMatch ? 'ring-2 ring-green-400 ring-offset-1' : '',
       ].join(' ')}
@@ -61,14 +64,6 @@ function PersonNodeBase({ data }: { data: PersonNodeData }) {
             {entity.initials}
           </div>
         </div>
-        <span
-          className={[
-            'absolute -bottom-1 -right-1 rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide shadow-sm',
-            riskColors[entity.riskLevel],
-          ].join(' ')}
-        >
-          {entity.riskLevel}
-        </span>
       </div>
 
       <div className="text-center">
@@ -76,18 +71,6 @@ function PersonNodeBase({ data }: { data: PersonNodeData }) {
         <p className="text-xs text-gray-500 mt-0.5">{entity.role}</p>
       </div>
 
-      <div className="flex items-center gap-1 rounded-full bg-gray-50 px-2 py-0.5">
-        <div className="h-1.5 w-16 rounded-full bg-gray-200 overflow-hidden">
-          <div
-            className="h-full rounded-full"
-            style={{
-              width: `${entity.riskScore}%`,
-              backgroundColor: entity.avatarColor,
-            }}
-          />
-        </div>
-        <span className="text-[10px] font-semibold text-gray-500">{entity.riskScore}</span>
-      </div>
     </div>
   );
 }
