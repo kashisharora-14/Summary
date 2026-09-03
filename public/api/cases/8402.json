@@ -1,0 +1,897 @@
+{
+  "case": {
+    "id": "8402",
+    "title": "Operation Shadow Network",
+    "status": "active",
+    "priority": "critical",
+    "assignedTo": "Inspector R. Mehta",
+    "filedDate": "03/03/2026",
+    "summary": "Coordinated bank heist at Central Bank, Sector 15. Suspect Arthur Vance identified via CDR analysis, IDPR cross-reference, and financial trail. Multiple data sources uploaded by investigating officer. Evidence suggests a 4-person network with financial laundering through shell company."
+  },
+  "dataSources": [
+    {
+      "id": "ds1",
+      "type": "cdr",
+      "label": "Call Detail Records",
+      "uploadedAt": "03/05 14:20",
+      "status": "processed",
+      "recordCount": 847,
+      "fileName": "cdr_vance_carter.xlsx"
+    },
+    {
+      "id": "ds2",
+      "type": "idpr",
+      "label": "Identity Records",
+      "uploadedAt": "03/05 14:22",
+      "status": "processed",
+      "recordCount": 5,
+      "fileName": "idpr_suspects.pdf"
+    },
+    {
+      "id": "ds3",
+      "type": "bank",
+      "label": "Bank Statements",
+      "uploadedAt": "03/06 09:15",
+      "status": "processed",
+      "recordCount": 132,
+      "fileName": "bank_meridian_holdings.csv"
+    },
+    {
+      "id": "ds4",
+      "type": "social",
+      "label": "Social Media Data",
+      "uploadedAt": "03/06 11:30",
+      "status": "reviewing",
+      "recordCount": 318,
+      "fileName": "social_reed_drew.json"
+    },
+    {
+      "id": "ds5",
+      "type": "location",
+      "label": "Location History",
+      "uploadedAt": "03/07 08:00",
+      "status": "processed",
+      "recordCount": 64,
+      "fileName": "tower_location_data.csv"
+    },
+    {
+      "id": "ds6",
+      "type": "surveillance",
+      "label": "CCTV Footage",
+      "uploadedAt": "03/07 10:45",
+      "status": "pending",
+      "recordCount": 12,
+      "fileName": "cctv_cafe_lumiere.mp4"
+    },
+    {
+      "id": "ds7",
+      "type": "forensic",
+      "label": "Forensic Report",
+      "uploadedAt": "03/08 16:00",
+      "status": "pending",
+      "recordCount": 3,
+      "fileName": "forensic_vault_breach.pdf"
+    }
+  ],
+  "entities": [
+    {
+      "id": "arthur-vance",
+      "type": "person",
+      "name": "Arthur Vance",
+      "role": "Primary Suspect",
+      "riskScore": 94,
+      "riskLevel": "high",
+      "status": "Active Investigation",
+      "summary": "Former financial consultant with two prior fraud convictions. Identified as mastermind of Central Bank heist through CDR analysis, financial trail, and witness testimony. Traveled to Zurich on 03/04.",
+      "keyInfo": [
+        "Age 47, former financial consultant",
+        "Aadhaar: XXXX-XXXX-4821",
+        "Two prior fraud convictions (2016, 2019)",
+        "Owns shell company \"Meridian Holdings LLC\"",
+        "Traveled to Zurich on 03/04 — funds traced"
+      ],
+      "knownConnections": [
+        "eliza-reed",
+        "ben-carter",
+        "michael-drew",
+        "sarah-jenkins"
+      ],
+      "relatedEvidence": [
+        "bank-statement",
+        "cdr-vance",
+        "cafe-meet",
+        "social-vance"
+      ],
+      "recentActivity": [
+        {
+          "date": "03/10",
+          "action": "Last call to Ben Carter (14 min)"
+        },
+        {
+          "date": "03/09",
+          "action": "Large transfer to offshore account"
+        },
+        {
+          "date": "03/04",
+          "action": "Boarded flight to Zurich"
+        },
+        {
+          "date": "03/03",
+          "action": "Present near Central Bank during heist"
+        }
+      ],
+      "avatarColor": "#dc2626",
+      "initials": "AV",
+      "photoUrl": "https://images.pexels.com/photos/38740728/pexels-photo-38740728.jpeg?auto=compress&cs=tinysrgb&h=350&w=350",
+      "phone": "+91 98xxx 48210",
+      "address": "14 Oakwood Lane, Bandra West, Mumbai",
+      "aadhaar": "XXXX-XXXX-4821",
+      "position": {
+        "x": 520,
+        "y": 340
+      }
+    },
+    {
+      "id": "eliza-reed",
+      "type": "person",
+      "name": "Eliza Reed",
+      "role": "Suspected Accomplice",
+      "riskScore": 71,
+      "riskLevel": "high",
+      "status": "Under Surveillance",
+      "summary": "Art gallery owner. Received $480K from Meridian Holdings LLC. Met Vance at Cafe Lumiere on 03/01. Suspected of laundering heist proceeds through gallery.",
+      "keyInfo": [
+        "Age 39, art gallery owner",
+        "Aadhaar: XXXX-XXXX-7732",
+        "Received $480K from Meridian Holdings LLC",
+        "Met Vance at Cafe Lumiere on 03/01",
+        "No prior criminal record"
+      ],
+      "knownConnections": [
+        "arthur-vance",
+        "michael-drew"
+      ],
+      "relatedEvidence": [
+        "cafe-meet",
+        "bank-statement",
+        "social-reed"
+      ],
+      "recentActivity": [
+        {
+          "date": "03/07",
+          "action": "Painting recovered from gallery storage"
+        },
+        {
+          "date": "03/01",
+          "action": "Met Vance at Cafe Lumiere"
+        }
+      ],
+      "avatarColor": "#d97706",
+      "initials": "ER",
+      "photoUrl": "https://images.pexels.com/photos/33680700/pexels-photo-33680700.jpeg?auto=compress&cs=tinysrgb&h=350&w=350",
+      "phone": "+91 98xxx 77320",
+      "address": "27 Maple Street, Arts District, Mumbai",
+      "aadhaar": "XXXX-XXXX-7732",
+      "position": {
+        "x": 180,
+        "y": 220
+      }
+    },
+    {
+      "id": "sarah-jenkins",
+      "type": "person",
+      "name": "Sarah Jenkins",
+      "role": "Witness",
+      "riskScore": 22,
+      "riskLevel": "low",
+      "status": "Protected Witness",
+      "summary": "Bank teller at Central Bank. Eyewitness who placed Vance at the scene. Provided formal statement on 03/05. Under protective custody.",
+      "keyInfo": [
+        "Age 31, bank teller at Central Bank",
+        "Aadhaar: XXXX-XXXX-1190",
+        "Identified Vance from photo lineup",
+        "Under protective custody",
+        "No relation to other suspects"
+      ],
+      "knownConnections": [
+        "arthur-vance"
+      ],
+      "relatedEvidence": [
+        "bank-heist-evidence"
+      ],
+      "recentActivity": [
+        {
+          "date": "03/05",
+          "action": "Provided formal statement"
+        },
+        {
+          "date": "03/03",
+          "action": "Witnessed heist — called 911"
+        }
+      ],
+      "avatarColor": "#2563eb",
+      "initials": "SJ",
+      "photoUrl": "https://images.pexels.com/photos/36271927/pexels-photo-36271927.jpeg?auto=compress&cs=tinysrgb&h=350&w=350",
+      "phone": "+91 98xxx 11905",
+      "address": "B-42, Greenwood Society, Powai, Mumbai",
+      "aadhaar": "XXXX-XXXX-1190",
+      "position": {
+        "x": 860,
+        "y": 160
+      }
+    },
+    {
+      "id": "ben-carter",
+      "type": "person",
+      "name": "Ben Carter",
+      "role": "Driver",
+      "riskScore": 58,
+      "riskLevel": "medium",
+      "status": "Person of Interest",
+      "summary": "Commercial truck driver. 14 calls to Vance in March per CDR. Vehicle spotted near warehouse on 03/12. One prior conviction for vehicle theft.",
+      "keyInfo": [
+        "Age 35, commercial truck driver",
+        "Aadhaar: XXXX-XXXX-3344",
+        "14 calls to Vance in March (CDR)",
+        "Vehicle spotted near warehouse on 03/12",
+        "One prior conviction for vehicle theft"
+      ],
+      "knownConnections": [
+        "arthur-vance",
+        "warehouse"
+      ],
+      "relatedEvidence": [
+        "cdr-carter",
+        "phone-records"
+      ],
+      "recentActivity": [
+        {
+          "date": "03/12",
+          "action": "Vehicle spotted at Old Warehouse"
+        },
+        {
+          "date": "03/10",
+          "action": "Received call from Vance (14 min)"
+        }
+      ],
+      "avatarColor": "#d97706",
+      "initials": "BC",
+      "photoUrl": "https://images.pexels.com/photos/33680674/pexels-photo-33680674.jpeg?auto=compress&cs=tinysrgb&h=350&w=350",
+      "phone": "+91 98xxx 33442",
+      "address": "8 Dockyard Road, Mazagaon, Mumbai",
+      "aadhaar": "XXXX-XXXX-3344",
+      "position": {
+        "x": 180,
+        "y": 540
+      }
+    },
+    {
+      "id": "michael-drew",
+      "type": "person",
+      "name": "Michael Drew",
+      "role": "Logistics Associate",
+      "riskScore": 65,
+      "riskLevel": "medium",
+      "status": "Under Investigation",
+      "summary": "Logistics contractor. Co-signed lease on Old Warehouse. Financial link to Meridian Holdings LLC. Met Reed twice in February. Handled vehicle acquisition and safe house.",
+      "keyInfo": [
+        "Age 42, self-employed logistics contractor",
+        "Aadhaar: XXXX-XXXX-6655",
+        "Co-signed lease on Old Warehouse",
+        "Financial link to Meridian Holdings LLC",
+        "Met Eliza Reed twice in February"
+      ],
+      "knownConnections": [
+        "arthur-vance",
+        "eliza-reed",
+        "warehouse"
+      ],
+      "relatedEvidence": [
+        "bank-statement",
+        "social-drew"
+      ],
+      "recentActivity": [
+        {
+          "date": "03/12",
+          "action": "Warehouse activity detected"
+        },
+        {
+          "date": "03/09",
+          "action": "Received payment from Meridian Holdings"
+        }
+      ],
+      "avatarColor": "#d97706",
+      "initials": "MD",
+      "photoUrl": "https://images.pexels.com/photos/37273008/pexels-photo-37273008.png?auto=compress&cs=tinysrgb&h=350&w=350",
+      "phone": "+91 98xxx 66551",
+      "address": "15 Hill Road, Bandra East, Mumbai",
+      "aadhaar": "XXXX-XXXX-6655",
+      "position": {
+        "x": 860,
+        "y": 540
+      }
+    },
+    {
+      "id": "cdr-vance",
+      "type": "cdr",
+      "name": "CDR — Arthur Vance",
+      "number": "+91 98xxx 48210",
+      "totalCalls": 47,
+      "frequentContact": "Ben Carter (14 calls)",
+      "lastActivity": "03/10 22:14",
+      "callRecords": [
+        {
+          "timestamp": "03/10 22:14",
+          "duration": "14m 02s",
+          "direction": "outgoing",
+          "contactNumber": "+91 98xxx 33442",
+          "contactName": "Ben Carter"
+        },
+        {
+          "timestamp": "03/09 19:30",
+          "duration": "6m 18s",
+          "direction": "outgoing",
+          "contactNumber": "+91 98xxx 77320",
+          "contactName": "Eliza Reed"
+        },
+        {
+          "timestamp": "03/02 21:45",
+          "duration": "3m 55s",
+          "direction": "outgoing",
+          "contactNumber": "+91 98xxx 33442",
+          "contactName": "Ben Carter"
+        },
+        {
+          "timestamp": "03/01 18:00",
+          "duration": "2m 10s",
+          "direction": "outgoing",
+          "contactNumber": "+91 98xxx 77320",
+          "contactName": "Eliza Reed"
+        },
+        {
+          "timestamp": "02/28 14:20",
+          "duration": "0m 45s",
+          "direction": "incoming",
+          "contactNumber": "+91 98xxx 66551",
+          "contactName": "Michael Drew"
+        }
+      ],
+      "position": {
+        "x": 60,
+        "y": 360
+      }
+    },
+    {
+      "id": "cdr-carter",
+      "type": "cdr",
+      "name": "CDR — Ben Carter",
+      "number": "+91 98xxx 33442",
+      "totalCalls": 31,
+      "frequentContact": "Arthur Vance (14 calls)",
+      "lastActivity": "03/10 22:14",
+      "callRecords": [
+        {
+          "timestamp": "03/10 22:14",
+          "duration": "14m 02s",
+          "direction": "incoming",
+          "contactNumber": "+91 98xxx 48210",
+          "contactName": "Arthur Vance"
+        },
+        {
+          "timestamp": "03/08 11:30",
+          "duration": "5m 40s",
+          "direction": "incoming",
+          "contactNumber": "+91 98xxx 48210",
+          "contactName": "Arthur Vance"
+        },
+        {
+          "timestamp": "03/05 09:15",
+          "duration": "1m 22s",
+          "direction": "outgoing",
+          "contactNumber": "+91 98xxx 66551",
+          "contactName": "Michael Drew"
+        }
+      ],
+      "position": {
+        "x": 60,
+        "y": 680
+      }
+    },
+    {
+      "id": "bank-statement",
+      "type": "financial",
+      "name": "Bank Statement — Meridian Holdings",
+      "bank": "Zurich International Bank",
+      "accountNumber": "CH93 xxxx xxxx 8421",
+      "totalCredits": "$2,300,000",
+      "totalDebits": "$1,920,000",
+      "suspiciousTransfers": 5,
+      "transactions": [
+        {
+          "date": "03/09",
+          "amount": "$480,000",
+          "type": "debit",
+          "counterparty": "Eliza Reed — Gallery Account",
+          "note": "Shell company transfer"
+        },
+        {
+          "date": "03/09",
+          "amount": "$120,000",
+          "type": "debit",
+          "counterparty": "Michael Drew",
+          "note": "Logistics payment"
+        },
+        {
+          "date": "03/04",
+          "amount": "$2,300,000",
+          "type": "credit",
+          "counterparty": "Unknown Source",
+          "note": "Heist proceeds deposit"
+        },
+        {
+          "date": "02/28",
+          "amount": "$50,000",
+          "type": "debit",
+          "counterparty": "Ben Carter",
+          "note": "Advance payment"
+        },
+        {
+          "date": "02/15",
+          "amount": "$30,000",
+          "type": "debit",
+          "counterparty": "Warehouse Lease",
+          "note": "Property deposit"
+        }
+      ],
+      "position": {
+        "x": 360,
+        "y": 440
+      }
+    },
+    {
+      "id": "social-reed",
+      "type": "social",
+      "name": "Social — Eliza Reed",
+      "platform": "Instagram",
+      "handle": "@eliza_gallery",
+      "followers": 12400,
+      "flaggedContent": 3,
+      "posts": [
+        {
+          "platform": "Instagram",
+          "timestamp": "03/01 19:30",
+          "content": "Beautiful evening at Lumiere. New collection arriving soon.",
+          "location": "Cafe Lumiere, Arts District"
+        },
+        {
+          "platform": "Instagram",
+          "timestamp": "02/20 14:00",
+          "content": "Behind the scenes at the gallery. Exciting times ahead.",
+          "location": "Reed Gallery, Downtown"
+        },
+        {
+          "platform": "Instagram",
+          "timestamp": "02/15 16:45",
+          "content": "Met some wonderful people today. Great things in the works.",
+          "location": "Downtown Mumbai"
+        }
+      ],
+      "position": {
+        "x": 360,
+        "y": 100
+      }
+    },
+    {
+      "id": "social-drew",
+      "type": "social",
+      "name": "Social — Michael Drew",
+      "platform": "Facebook",
+      "handle": "michael.drew.logistics",
+      "followers": 820,
+      "flaggedContent": 2,
+      "posts": [
+        {
+          "platform": "Facebook",
+          "timestamp": "03/10 10:00",
+          "content": "Big move happening this week. Stay tuned.",
+          "location": "Dockside Industrial Park"
+        },
+        {
+          "platform": "Facebook",
+          "timestamp": "02/18 20:30",
+          "content": "New business venture coming together nicely.",
+          "location": "Mumbai"
+        }
+      ],
+      "position": {
+        "x": 960,
+        "y": 380
+      }
+    },
+    {
+      "id": "social-vance",
+      "type": "social",
+      "name": "Social — Arthur Vance",
+      "platform": "LinkedIn",
+      "handle": "arthur-vance-finance",
+      "followers": 3400,
+      "flaggedContent": 1,
+      "posts": [
+        {
+          "platform": "LinkedIn",
+          "timestamp": "03/02 08:00",
+          "content": "Excited to announce new international partnerships through Meridian Holdings.",
+          "location": "Mumbai"
+        },
+        {
+          "platform": "LinkedIn",
+          "timestamp": "02/10 12:00",
+          "content": "Looking forward to expanding operations overseas.",
+          "location": "Mumbai"
+        }
+      ],
+      "position": {
+        "x": 520,
+        "y": 100
+      }
+    },
+    {
+      "id": "bank-heist-evidence",
+      "type": "evidence",
+      "name": "Central Bank Heist",
+      "evidenceType": "event",
+      "description": "Primary crime scene. Central Bank vault breached on 03/03 at approximately 14:30. Estimated $2.3M in cash and negotiable instruments stolen.",
+      "date": "03/03",
+      "importance": "high",
+      "relatedPeople": [
+        "arthur-vance",
+        "sarah-jenkins"
+      ],
+      "relatedLocations": [
+        "central-bank-loc"
+      ],
+      "notes": "Vault access required inside knowledge or expert tools. No forced entry on secondary vault door.",
+      "position": {
+        "x": 680,
+        "y": 100
+      }
+    },
+    {
+      "id": "cafe-meet",
+      "type": "evidence",
+      "name": "Cafe Meet — Surveillance",
+      "evidenceType": "document",
+      "description": "CCTV footage from Cafe Lumiere showing Vance meeting Reed on 03/01, two days before the heist. Vance left with a sealed envelope.",
+      "date": "03/01",
+      "importance": "medium",
+      "relatedPeople": [
+        "arthur-vance",
+        "eliza-reed"
+      ],
+      "relatedLocations": [
+        "cafe-lumiere-loc"
+      ],
+      "notes": "Meeting lasted 47 minutes. Footage pending enhancement.",
+      "position": {
+        "x": 180,
+        "y": 60
+      }
+    },
+    {
+      "id": "warehouse",
+      "type": "location",
+      "name": "Old Warehouse",
+      "address": "142 Dockside Industrial Park, Sector 7",
+      "summary": "Abandoned warehouse co-leased by Michael Drew. Used as suspected staging area and temporary storage for heist proceeds.",
+      "relatedEvents": [
+        "03/12 - Warehouse Activity Detected"
+      ],
+      "relatedPeople": [
+        "ben-carter",
+        "michael-drew"
+      ],
+      "coordinates": {
+        "lat": 19.0177,
+        "lng": 72.8479
+      },
+      "position": {
+        "x": 680,
+        "y": 660
+      }
+    },
+    {
+      "id": "central-bank-loc",
+      "type": "location",
+      "name": "Central Bank",
+      "address": "1 Federal Plaza, Sector 15",
+      "summary": "Primary crime scene. Central Bank main branch where the heist occurred on 03/03. Vault breach resulted in $2.3M stolen.",
+      "relatedEvents": [
+        "03/03 - Bank Heist"
+      ],
+      "relatedPeople": [
+        "arthur-vance",
+        "sarah-jenkins"
+      ],
+      "coordinates": {
+        "lat": 19.076,
+        "lng": 72.8777
+      },
+      "position": {
+        "x": 680,
+        "y": 240
+      }
+    },
+    {
+      "id": "cafe-lumiere-loc",
+      "type": "location",
+      "name": "Cafe Lumiere",
+      "address": "27 Maple Street, Arts District",
+      "summary": "Meeting location where Vance and Reed were observed on surveillance footage on 03/01.",
+      "relatedEvents": [
+        "03/01 - Cafe Meeting"
+      ],
+      "relatedPeople": [
+        "arthur-vance",
+        "eliza-reed"
+      ],
+      "coordinates": {
+        "lat": 19.0596,
+        "lng": 72.8655
+      },
+      "position": {
+        "x": 180,
+        "y": 380
+      }
+    },
+    {
+      "id": "clue-shell-company",
+      "type": "clue",
+      "name": "Shell Company",
+      "description": "Meridian Holdings LLC is a shell company with no real operations, traced to Arthur Vance. Used to launder heist proceeds.",
+      "flagColor": "#dc2626",
+      "position": {
+        "x": 360,
+        "y": 260
+      }
+    },
+    {
+      "id": "clue-zurich",
+      "type": "clue",
+      "name": "Zurich Flight",
+      "description": "Vance boarded a flight to Zurich on 03/04, days after the heist. Funds traced to offshore account at Zurich International Bank.",
+      "flagColor": "#dc2626",
+      "position": {
+        "x": 960,
+        "y": 480
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r1",
+      "source": "arthur-vance",
+      "target": "eliza-reed",
+      "label": "Partner?",
+      "category": "suspect"
+    },
+    {
+      "id": "r2",
+      "source": "arthur-vance",
+      "target": "sarah-jenkins",
+      "label": "Identified By",
+      "category": "witness"
+    },
+    {
+      "id": "r3",
+      "source": "arthur-vance",
+      "target": "ben-carter",
+      "label": "Driver",
+      "category": "associate"
+    },
+    {
+      "id": "r4",
+      "source": "arthur-vance",
+      "target": "michael-drew",
+      "label": "Associate",
+      "category": "associate"
+    },
+    {
+      "id": "r5",
+      "source": "eliza-reed",
+      "target": "michael-drew",
+      "label": "Connected To",
+      "category": "associate"
+    },
+    {
+      "id": "r6",
+      "source": "arthur-vance",
+      "target": "bank-heist-evidence",
+      "label": "Primary Suspect",
+      "category": "evidence"
+    },
+    {
+      "id": "r7",
+      "source": "arthur-vance",
+      "target": "cafe-meet",
+      "label": "Captured On CCTV",
+      "category": "evidence"
+    },
+    {
+      "id": "r8",
+      "source": "arthur-vance",
+      "target": "bank-statement",
+      "label": "Owns Account",
+      "category": "financial"
+    },
+    {
+      "id": "r9",
+      "source": "eliza-reed",
+      "target": "bank-statement",
+      "label": "Received $480K",
+      "category": "financial"
+    },
+    {
+      "id": "r10",
+      "source": "michael-drew",
+      "target": "bank-statement",
+      "label": "Received $120K",
+      "category": "financial"
+    },
+    {
+      "id": "r11",
+      "source": "arthur-vance",
+      "target": "cdr-vance",
+      "label": "Phone Owner",
+      "category": "communication"
+    },
+    {
+      "id": "r12",
+      "source": "ben-carter",
+      "target": "cdr-carter",
+      "label": "Phone Owner",
+      "category": "communication"
+    },
+    {
+      "id": "r13",
+      "source": "ben-carter",
+      "target": "warehouse",
+      "label": "Last Seen",
+      "category": "location"
+    },
+    {
+      "id": "r14",
+      "source": "michael-drew",
+      "target": "warehouse",
+      "label": "Leased",
+      "category": "location"
+    },
+    {
+      "id": "r15",
+      "source": "arthur-vance",
+      "target": "central-bank-loc",
+      "label": "Last Seen",
+      "category": "location"
+    },
+    {
+      "id": "r16",
+      "source": "sarah-jenkins",
+      "target": "central-bank-loc",
+      "label": "Witness At",
+      "category": "location"
+    },
+    {
+      "id": "r17",
+      "source": "arthur-vance",
+      "target": "cafe-lumiere-loc",
+      "label": "Met At",
+      "category": "location"
+    },
+    {
+      "id": "r18",
+      "source": "eliza-reed",
+      "target": "cafe-lumiere-loc",
+      "label": "Met At",
+      "category": "location"
+    },
+    {
+      "id": "r19",
+      "source": "eliza-reed",
+      "target": "social-reed",
+      "label": "Account Owner",
+      "category": "social"
+    },
+    {
+      "id": "r20",
+      "source": "michael-drew",
+      "target": "social-drew",
+      "label": "Account Owner",
+      "category": "social"
+    },
+    {
+      "id": "r21",
+      "source": "arthur-vance",
+      "target": "social-vance",
+      "label": "Account Owner",
+      "category": "social"
+    },
+    {
+      "id": "r22",
+      "source": "arthur-vance",
+      "target": "clue-shell-company",
+      "label": "Owns",
+      "category": "clue"
+    },
+    {
+      "id": "r23",
+      "source": "arthur-vance",
+      "target": "clue-zurich",
+      "label": "Fled To",
+      "category": "clue"
+    },
+    {
+      "id": "r24",
+      "source": "clue-shell-company",
+      "target": "bank-statement",
+      "label": "Used For",
+      "category": "financial"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "t1",
+      "date": "03/01",
+      "label": "Cafe Meeting",
+      "entityId": "cafe-meet",
+      "description": "Vance meets Reed at Cafe Lumiere — captured on CCTV"
+    },
+    {
+      "id": "t2",
+      "date": "03/03",
+      "label": "Bank Heist",
+      "entityId": "bank-heist-evidence",
+      "description": "Central Bank vault breached, $2.3M stolen"
+    },
+    {
+      "id": "t3",
+      "date": "03/04",
+      "label": "Zurich Flight",
+      "entityId": "clue-zurich",
+      "description": "Vance boards flight to Zurich"
+    },
+    {
+      "id": "t4",
+      "date": "03/05",
+      "label": "CDR Analyzed",
+      "entityId": "cdr-vance",
+      "description": "Call records processed — 14 calls to Carter"
+    },
+    {
+      "id": "t5",
+      "date": "03/05",
+      "label": "Witness Statement",
+      "entityId": "sarah-jenkins",
+      "description": "Sarah Jenkins provides formal statement"
+    },
+    {
+      "id": "t6",
+      "date": "03/07",
+      "label": "Painting Found",
+      "entityId": "social-reed",
+      "description": "Social post leads to painting recovery"
+    },
+    {
+      "id": "t7",
+      "date": "03/09",
+      "label": "Financial Trail",
+      "entityId": "bank-statement",
+      "description": "$480K traced to Reed via Meridian Holdings"
+    },
+    {
+      "id": "t8",
+      "date": "03/12",
+      "label": "Warehouse Activity",
+      "entityId": "warehouse",
+      "description": "Surveillance detects activity at Old Warehouse"
+    }
+  ]
+}
