@@ -22,6 +22,16 @@ function PersonNodeBase({ data }: { data: PersonNodeData }) {
     : isWitness
     ? 'border-blue-200 bg-blue-50 hover:shadow-md hover:scale-[1.03]'
     : 'border-gray-200 bg-white hover:shadow-md hover:scale-[1.03]';
+  const selectedRoleColors = isSuspect
+    ? 'border-red-500 bg-red-50'
+    : isWitness
+    ? 'border-blue-500 bg-blue-50'
+    : 'border-gray-400 bg-white';
+  const highlightedRoleColors = isSuspect
+    ? 'border-red-400 bg-red-50'
+    : isWitness
+    ? 'border-blue-400 bg-blue-50'
+    : 'border-gray-300 bg-white';
 
   return (
     <div
@@ -29,9 +39,9 @@ function PersonNodeBase({ data }: { data: PersonNodeData }) {
       className={[
         'relative flex flex-col items-center gap-2 rounded-2xl border px-4 py-3 shadow-sm transition-all duration-200 cursor-pointer',
         isSelected
-          ? 'border-blue-500 bg-white ring-2 ring-blue-300 shadow-lg scale-105'
+          ? `${selectedRoleColors} ring-2 ring-blue-300 shadow-lg scale-105`
           : isHighlighted
-          ? 'border-blue-400 bg-white shadow-md scale-[1.03]'
+          ? `${highlightedRoleColors} shadow-md scale-[1.03]`
           : roleCardColors,
         isFaded ? 'opacity-30' : 'opacity-100',
         isSearchMatch ? 'ring-2 ring-green-400 ring-offset-1' : '',
