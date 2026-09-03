@@ -108,7 +108,7 @@ export function InvestigationBoard({
         source: r.source,
         target: r.target,
         label: '',
-        type: 'smoothstep',
+        type: 'default',
         animated: false,
         style: { stroke: categoryColors[r.category], strokeWidth: 1.25, opacity: 0.22 },
         labelStyle: { fontSize: 10, fill: '#6b7280', fontWeight: 500 },
@@ -206,10 +206,7 @@ export function InvestigationBoard({
         onPaneClick={onPaneClick}
         onInit={onInit}
         nodeTypes={nodeTypes}
-        connectionLineType={ConnectionLineType.SmoothStep}
-        defaultEdgeOptions={{
-          type: 'smoothstep',
-        }}
+        connectionLineType={ConnectionLineType.Bezier}
         fitView
         fitViewOptions={{ padding: 0.15, maxZoom: 1.2 }}
         minZoom={0.3}
