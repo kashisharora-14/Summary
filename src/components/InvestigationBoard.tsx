@@ -108,9 +108,9 @@ export function InvestigationBoard({
         source: r.source,
         target: r.target,
         label: '',
-        type: 'default',
+        type: 'smoothstep',
         animated: false,
-        style: { stroke: categoryColors[r.category], strokeWidth: 1.5, opacity: 0.5 },
+        style: { stroke: categoryColors[r.category], strokeWidth: 1.25, opacity: 0.22 },
         labelStyle: { fontSize: 10, fill: '#6b7280', fontWeight: 500 },
         labelBgStyle: { fill: '#ffffff', fillOpacity: 0.9 },
         labelBgPadding: [4, 2],
@@ -157,8 +157,8 @@ export function InvestigationBoard({
           animated: isRelated,
           style: {
             ...e.style,
-            opacity: isFaded ? 0.1 : isRelated ? 1 : 0.4,
-            strokeWidth: isRelated ? 2.5 : 1.5,
+            opacity: isFaded ? 0.035 : isRelated ? 0.95 : 0.22,
+            strokeWidth: isRelated ? 2.25 : 1.25,
           },
         };
       }),
@@ -206,7 +206,10 @@ export function InvestigationBoard({
         onPaneClick={onPaneClick}
         onInit={onInit}
         nodeTypes={nodeTypes}
-        connectionLineType={ConnectionLineType.Bezier}
+        connectionLineType={ConnectionLineType.SmoothStep}
+        defaultEdgeOptions={{
+          type: 'smoothstep',
+        }}
         fitView
         fitViewOptions={{ padding: 0.15, maxZoom: 1.2 }}
         minZoom={0.3}
