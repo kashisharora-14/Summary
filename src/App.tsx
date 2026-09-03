@@ -26,6 +26,22 @@ function App() {
       });
   }, []);
 
+  const handleSelectNode = useCallback((id: string | null) => {
+    setSelectedId(id);
+    if (id && caseData) {
+      const timelineMatch = caseData.timeline.find((t) => t.entityId === id);
+      setActiveTimelineEvent(timelineMatch?.id ?? null);
+    } else {
+      setActiveTimelineEvent(null);
+    }
+  }, [caseData]);
+
+  const handleTimelineClick = useCallback((event: TimelineEvent) => {
+    setActiveTimelineEvent(event.id);
+    setSelectedId(event.entityId);
+    focusNodeRef.current = event.entityId;
+  }, []);
+
   if (loadError) {
     return (
       <div className="flex h-[100dvh] items-center justify-center bg-gray-50 p-6 text-center">
@@ -60,22 +76,6 @@ function App() {
   const selectedEntity = selectedId
     ? caseData.entities.find((e) => e.id === selectedId) ?? null
     : null;
-
-  const handleSelectNode = useCallback((id: string | null) => {
-    setSelectedId(id);
-    if (id) {
-      const timelineMatch = caseData.timeline.find((t) => t.entityId === id);
-      setActiveTimelineEvent(timelineMatch?.id ?? null);
-    } else {
-      setActiveTimelineEvent(null);
-    }
-  }, []);
-
-  const handleTimelineClick = useCallback((event: TimelineEvent) => {
-    setActiveTimelineEvent(event.id);
-    setSelectedId(event.entityId);
-    focusNodeRef.current = event.entityId;
-  }, []);
 
   return (
     <div className="flex h-[100dvh] min-w-0 flex-col overflow-hidden bg-gray-50">
