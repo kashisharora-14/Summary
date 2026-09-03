@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { Shield } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { InvestigationBoard } from '@/components/InvestigationBoard';
 import { DetailsPanel } from '@/components/DetailsPanel';
@@ -38,8 +39,20 @@ function App() {
 
   if (!caseData) {
     return (
-      <div className="flex h-[100dvh] items-center justify-center bg-gray-50 text-sm text-gray-500">
-        Loading case data...
+      <div className="flex h-[100dvh] items-center justify-center bg-gray-50 p-6">
+        <div className="flex flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white px-8 py-7 shadow-sm">
+          <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gray-900 shadow-sm">
+            <Shield size={24} className="text-white" />
+            <span className="absolute -inset-1 animate-ping rounded-xl border border-blue-300 opacity-30" />
+          </div>
+          <div className="text-center">
+            <p className="text-sm font-semibold text-gray-800">Loading case data</p>
+            <p className="mt-0.5 text-xs text-gray-400">Preparing your investigation board...</p>
+          </div>
+          <div className="h-1 w-32 overflow-hidden rounded-full bg-gray-100">
+            <div className="h-full w-1/2 animate-pulse rounded-full bg-blue-500" />
+          </div>
+        </div>
       </div>
     );
   }
