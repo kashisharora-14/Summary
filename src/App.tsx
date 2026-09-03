@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex h-screen flex-col overflow-hidden bg-gray-50">
+    <div className="flex h-[100dvh] min-w-0 flex-col overflow-hidden bg-gray-50">
       <Header
         caseId={caseData.case.id}
         caseTitle={caseData.case.title}
@@ -44,8 +44,8 @@ function App() {
         onSearchChange={setSearchQuery}
       />
 
-      <div className="flex flex-1 overflow-hidden">
-        <div className="relative flex-1">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:flex-row">
+        <div className="relative min-h-0 min-w-0 flex-1">
           <CaseSummary
             summary={caseData.case.summary}
             caseId={caseData.case.id}

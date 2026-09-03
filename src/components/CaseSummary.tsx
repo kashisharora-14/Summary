@@ -11,7 +11,7 @@ export function CaseSummary({ summary, caseId, caseTitle }: CaseSummaryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="absolute left-4 top-4 z-10 w-80">
+    <div className="absolute left-3 right-3 top-3 z-10 w-auto sm:left-4 sm:right-auto sm:top-4 sm:w-80">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all hover:shadow-md"

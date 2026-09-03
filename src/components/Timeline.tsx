@@ -9,16 +9,17 @@ interface TimelineProps {
 
 export function Timeline({ timeline, activeEventId, onEventClick }: TimelineProps) {
   return (
-    <div className="flex h-20 items-center border-t border-gray-200 bg-white px-5 gap-4">
+    <div className="flex h-[4.5rem] flex-shrink-0 items-center gap-2 border-t border-gray-200 bg-white px-3 sm:h-20 sm:gap-4 sm:px-5">
       <button className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gray-900 text-white transition-all hover:scale-110 hover:bg-gray-700 shadow-sm">
         <Play size={15} fill="white" />
       </button>
 
-      <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gray-400 flex-shrink-0">
+      <div className="hidden flex-shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gray-400 sm:flex">
         Case Timeline
       </div>
 
-      <div className="relative flex flex-1 items-center justify-between px-2">
+      <div className="relative min-w-0 flex-1 overflow-x-auto px-2">
+        <div className="flex min-w-[34rem] items-center justify-between">
         <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-gray-200" />
 
         {timeline.map((event) => {
@@ -58,6 +59,7 @@ export function Timeline({ timeline, activeEventId, onEventClick }: TimelineProp
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );

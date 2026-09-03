@@ -37,7 +37,7 @@ const statusConfig: Record<DataSource['status'], { icon: typeof CheckCircle2; la
 
 export function DataSourcesPanel({ sources, isExpanded, onToggle }: DataSourcesPanelProps) {
   return (
-    <div className={`absolute right-4 top-4 z-10 transition-all duration-300 ${isExpanded ? 'w-72' : 'w-52'}`}>
+    <div className={`absolute left-3 right-3 top-16 z-10 transition-all duration-300 sm:left-auto sm:right-4 sm:top-4 ${isExpanded ? 'w-auto sm:w-72' : 'w-52'}`}>
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all hover:shadow-md"
@@ -52,7 +52,7 @@ export function DataSourcesPanel({ sources, isExpanded, onToggle }: DataSourcesP
       </button>
 
       {isExpanded && (
-        <div className="mt-2 flex flex-col gap-1.5 rounded-lg border border-gray-200 bg-white p-2.5 shadow-sm max-h-[60vh] overflow-y-auto">
+        <div className="mt-2 flex max-h-[30vh] flex-col gap-1.5 overflow-y-auto rounded-lg border border-gray-200 bg-white p-2.5 shadow-sm sm:max-h-[60vh]">
           {sources.map((source) => {
             const config = sourceConfig[source.type];
             const Icon = config.icon;
