@@ -1,19 +1,48 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { InvestigationBoard } from '@/components/InvestigationBoard';
 import { DetailsPanel } from '@/components/DetailsPanel';
 import { Timeline } from '@/components/Timeline';
 import { CaseSummary } from '@/components/CaseSummary';
 import { DataSourcesPanel } from '@/components/DataSourcesPanel';
-import { caseData } from '@/data/caseData';
-import type { TimelineEvent } from '@/types/case';
+import { fetchCaseData } from '@/api/caseApi';
+import type { CaseData, TimelineEvent } from '@/types/case';
 
 function App() {
+  const [caseData, setCaseData] = useState<CaseData | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTimelineEvent, setActiveTimelineEvent] = useState<string | null>(null);
   const [sourcesExpanded, setSourcesExpanded] = useState(true);
   const focusNodeRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    fetchCaseData('8402')
+      .then(setCaseData)
+      .catch((error: unknown) => {
+        setLoadError(error instanceof Error ? error.message : 'Unable to load case data');
+      });
+  }, []);
+
+  if (loadError) {
+    return (
+      <div className="flex h-[100dvh] items-center justify-center bg-gray-50 p-6 text-center">
+        <div className="rounded-xl border border-red-100 bg-white p-6 shadow-sm">
+          <p className="text-sm font-semibold text-red-600">Unable to load case data</p>
+          <p className="mt-1 text-xs text-gray-500">{loadError}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!caseData) {
+    return (
+      <div className="flex h-[100dvh] items-center justify-center bg-gray-50 text-sm text-gray-500">
+        Loading case data...
+      </div>
+    );
+  }
 
   const selectedEntity = selectedId
     ? caseData.entities.find((e) => e.id === selectedId) ?? null
